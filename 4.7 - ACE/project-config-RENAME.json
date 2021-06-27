@@ -1,0 +1,11 @@
+{"MAIN_DIR":"*INSERT_MAIN_DIRECTORY_HERE*",
+  "DB_FP": "*INSERT_DB_FP_HERE*",
+  "GROUPS_FP": "*MAIN_DIR*/MP_Groups",
+  "SPEAKER_FILE": "*MAIN_DIR*/speakers.json",
+  "DATES_FP": "*MAIN_DIR*/key_dates.csv",
+  "CORPUS_METADATA_DIR": "*MAIN_DIR*/Data_Collection/data",
+  "RESULTS_DIR_ALL": "*MAIN_DIR*/Results/analysis/all_contributions",
+  "RESULTS_DIR_EU": "*MAIN_DIR*/Results/analysis/eu_contributions",
+  "GRAPHS_DIR": "*MAIN_DIR*/Results/graphs",
+  "KW_DIR": "*MAIN_DIR*/Results/keywords",
+  "EXPERIMENT_RESULTS": "*MAIN_DIR*/Results/hyperparam_experiments"}

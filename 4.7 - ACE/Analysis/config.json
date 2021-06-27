@@ -1,0 +1,69 @@
+{
+    "db_fp": "E:/Datasets/Hansard-Commons/DB/commons.db",
+    "pipeline_output": "E:/Hansard_Results/NEW_PIPELINE_OUTPUT",
+    "tok_method": "spacy",
+    "drop_stop": "True",
+    "runs":
+    {
+        "ref-stance-kw":
+        {
+            "run_type": "keywords",
+            "group_type": "brexit_stance",
+            "filter_type": "eu",
+            "normalised": "False",
+            "out_dir": "BREXIT_STANCE_KW",
+            "window_type": "time",
+            "window_size": 90,
+            "window_step": 90,
+            "embedding_window_type": "time",
+            "embedding_window_size": 365,
+            "embedding_window_step": 365,
+            "embedding_keywords": ["referendum", "brexit","remain","leave","europe", "eu", "market", "minister", "may", "movement", "immigration", "single", "common"]
+        },
+        "ref-stance-bow":
+        {
+            "run_type": "bag-of-words",
+            "group_type": "brexit_stance",
+            "filter_type": "eu",
+            "normalised": "False",
+            "out_dir": "BREXIT_STANCE_BOW",
+            "window_type": "time",
+            "window_size": 90,
+            "window_step": 90,
+            "embedding_window_type": "time",
+            "embedding_window_size": 365,
+            "embedding_window_step": 365,
+            "embedding_keywords": ["referendum", "brexit","remain","leave","europe", "eu", "market", "minister", "may", "movement", "immigration", "single", "common"]
+        },
+        "ref-stance-kw-window":
+        {
+            "run_type": "kw-window",
+            "group_type": "brexit_stance",
+            "filter_type": "eu",
+            "normalised": "False",
+            "out_dir": "BREXIT_STANCE_KW_WINDOW",
+            "window_type": "time",
+            "window_size": 360,
+            "window_step": 90,
+            "embedding_window_type": "time",
+            "embedding_window_size": 365,
+            "embedding_window_step": 365,
+            "embedding_keywords": ["referendum", "brexit","remain","leave","europe", "eu", "market", "minister", "may", "movement", "immigration", "single", "common"]
+        },
+        "ref-stance-bow-window":
+        {
+            "run_type": "bow-window",
+            "group_type": "brexit_stance",
+            "filter_type": "eu",
+            "normalised": "False",
+            "out_dir": "BREXIT_STANCE_BOW_WINDOW",
+            "window_type": "time",
+            "window_size": 360,
+            "window_step": 90,
+            "embedding_window_type": "time",
+            "embedding_window_size": 360,
+            "embedding_window_step": 90,
+            "embedding_keywords": ["referendum", "brexit","remain","leave","europe", "eu", "market", "minister", "may", "movement", "immigration", "single", "common"]
+        }
+    }
+}

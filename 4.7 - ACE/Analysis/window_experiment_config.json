@@ -1,0 +1,21 @@
+{
+    "queries": ["party == 'Conservative'", "party == 'Labour'"],
+    "gnames": ["Conservative", "Labour"],
+    "token_limit": 60,
+    "params": 
+    [
+        {"data": "eu", "win_size": 10000, "win_step": 5000, "balanced": true, "comp_method": "CE", "n_runs": 5},
+        {"data": "eu", "win_size": 10000, "win_step": 1000, "balanced": true, "comp_method": "CE", "n_runs": 5},
+        {"data": "eu", "win_size": 10000, "win_step": 10000, "balanced": true, "comp_method": "CE", "n_runs": 5},
+        {"data": "eu", "win_size": 10000, "win_step": 5000, "balanced": false, "comp_method": "CE", "n_runs": 5},
+        {"data": "eu", "win_size": 20000, "win_step": 5000, "balanced": true, "comp_method": "CE", "n_runs": 5},
+        {"data": "eu", "win_size": 20000, "win_step": 10000, "balanced": true, "comp_method": "CE", "n_runs": 5},
+        {"data": "eu", "win_size": 20000, "win_step": 20000, "balanced": true, "comp_method": "CE", "n_runs": 5},
+        {"data": "eu", "win_size": 20000, "win_step": 5000, "balanced": true, "comp_method": "CE", "n_runs": 5},
+        {"data": "eu", "win_size": 50000, "win_step": 5000, "balanced": true, "comp_method": "CE", "n_runs": 5},
+        {"data": "eu", "win_size": 50000, "win_step": 5000, "balanced": false, "comp_method": "CE", "n_runs": 5},
+        {"data": "full", "win_size": 10000, "win_step": 5000, "balanced": true, "comp_method": "CE", "n_runs": 5},
+        {"data": "full", "win_size": 20000, "win_step": 5000, "balanced": true, "comp_method": "CE", "n_runs": 5},
+        {"data": "full", "win_size": 50000, "win_step": 5000, "balanced": true, "comp_method": "CE", "n_runs": 5}
+    ]
+}

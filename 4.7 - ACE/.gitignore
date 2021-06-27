@@ -1,0 +1,7 @@
+env/
+.vscode/
+.ipynb_checkpoints/
+*/__pycache__/*
+.~lock.*
+project-config-test.json
+launch.json
