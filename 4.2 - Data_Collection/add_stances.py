@@ -9,6 +9,10 @@ import json
 
 from fuzzywuzzy import fuzz
 
+import sys
+sys.path.insert(1, "../")
+from settings import DB_FP, CORPUS_META
+
 sql_get_members ="""
 SELECT c.PimsId, m.name, c.constituency
 FROM members as m
@@ -227,12 +231,6 @@ def create_stance_table(data, conn):
 
 if __name__ == "__main__":
     out_dir = input("Enter Output Directory:\n")
-
-    with open("../project-config.json") as config_file:
-        project_config = json.load(config_file)
-
-    DB_FP = project_config["DB_FP"]
-    CORPUS_META = project_config["CORPUS_METADATA_DIR"]
 
     mp_ref_fp = os.path.join(CORPUS_META, "MPReferendumStance(Politics Home).csv")
 

@@ -3,11 +3,13 @@
 import sys
 import sqlite3
 import pandas as pd
-
+import json
 from sqlite3 import Error as SQLError
 from make_db import create_connection, create_table
 from lxml import etree
 
+sys.path.insert(1, "../")
+from settings import DB_FP as db_fp
 
 def get_posts_from_xml(curr_member, members_xml):
     posts = []
@@ -78,11 +80,6 @@ def add_member_posts(posts, cursor):
             cursor.execute(command, curr_entry)
 
 if __name__ == "__main__":
-    with open("../project-config-test.json") as config_file:
-        project_config = json.load(config_file)
-
-    db_fp = project_config["DB_FP"]
-
     # Make connection to the database.
     conn = create_connection(db_fp)
     curs = conn.cursor()

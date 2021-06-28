@@ -5,3 +5,4 @@ env/
 .~lock.*
 project-config-test.json
 launch.json
+Output/
