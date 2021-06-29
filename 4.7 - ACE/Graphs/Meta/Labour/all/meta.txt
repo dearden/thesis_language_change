@@ -1,0 +1,35 @@
+Num Posts: 70178
+Num Users: 288
+Median words / post: 94.0
+Mean words / post: 217.00420359656871
+Num words: 15228921
+Num Users w/ >50 Posts: 263
+Mean posts per user: 243.67361111111111
+Median posts per user: 203.0
+Median words / user: 43954.5
+Mean words / user: 52878.197916666664
+Num words: 15228921
+288 users in top 50.0% of contribs
+288 users in bottom 50.0% of contribs
+13388370 in top 50.0% - Post Lengths
+1840551 in bottom 50.0% - Post Lengths
+54082 in top 50.0% - Contribs Per User
+16096 in bottom 50.0% - Contribs Per User
+11844832 in top 50.0% - Words Per User
+3384089 in bottom 50.0% - Words Per User
+287 users in top 25.0% of contribs
+288 users in bottom 75.0% of contribs
+11214956 in top 25.0% - Post Lengths
+4013965 in bottom 75.0% - Post Lengths
+35865 in top 25.0% - Contribs Per User
+34313 in bottom 75.0% - Contribs Per User
+7707932 in top 25.0% - Words Per User
+7520989 in bottom 75.0% - Words Per User
+284 users in top 5.0% of contribs
+288 users in bottom 95.0% of contribs
+4927596 in top 5.0% - Post Lengths
+10301325 in bottom 95.0% - Post Lengths
+11702 in top 5.0% - Contribs Per User
+58476 in bottom 95.0% - Contribs Per User
+2426374 in top 5.0% - Words Per User
+12802547 in bottom 95.0% - Words Per User

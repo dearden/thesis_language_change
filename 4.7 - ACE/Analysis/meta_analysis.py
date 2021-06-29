@@ -37,7 +37,7 @@ def individual_hist(data, ax, plot_name, stat_name):
 def top_bottom_stats(df, percentile, stat_name=""):
     quantile_value, top, bottom = get_top_bottom_counts(df, percentile)
     
-    fig, axes = plt.subplots(2, 2, figsize=(15, 12))
+    fig, axes = plt.subplots(2, 2, figsize=(10, 8))
 
     individual_dist(df[df <= quantile_value], 
                     axes[0,0], 
@@ -83,8 +83,9 @@ def make_histogram(df, fp, xlabel=""):
     df.plot.hist(grid=True, bins=30, rwidth=0.9, ax=ax)
     
     fix_ax(ax, "", xlabel, "Frequency")
-    plt.tight_layout()
-    fig.savefig(fp)
+    plt.tight_layout(pad=0.4)
+    fig.set_tight_layout(True, pad=0.4)
+    fig.savefig(fp, bbox_inches='tight')
     
 def make_quant_dist(df, name, quantile, output, fp):
     # Get number of posts above and below percentile
@@ -93,8 +94,9 @@ def make_quant_dist(df, name, quantile, output, fp):
     output.append("{0} in bottom {1}% - {2}".format(bottom.sum(), quantile*100, name))
     
     fig = top_bottom_stats(df, quantile, name)
-    plt.tight_layout()
-    fig.savefig(fp)
+    fig.set_tight_layout(True, pad=0.4)
+    plt.tight_layout(pad=0.4)
+    fig.savefig(fp, bbox_inches='tight')
 
 def get_meta(out_dir, contributions, tokens, quantiles):
     check_dir(out_dir)
