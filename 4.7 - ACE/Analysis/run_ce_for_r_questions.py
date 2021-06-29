@@ -16,7 +16,10 @@ from run_CE_experiments import get_groups_toks_and_contribs
 with open("../project-config.json") as config_file:
     project_config = json.load(config_file)
 
-DB_FP = project_config["DB_FP"]
+import sys
+sys.path.insert(1, "../../")
+from settings import DB_FP
+
 MP_Group_FP = project_config["GROUPS_FP"]
 with open(project_config["SPEAKER_FILE"]) as speaker_file:
     speaker_list = json.load(speaker_file)

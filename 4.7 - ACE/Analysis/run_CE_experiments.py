@@ -15,7 +15,10 @@ from mp_sampling import multi_mp_splits_with_limit, multi_mp_splits, get_end_of_
 with open("../project-config.json") as config_file:
     project_config = json.load(config_file)
 
-DB_FP = project_config["DB_FP"]
+import sys
+sys.path.insert(1, "../../")
+from settings import DB_FP
+
 MP_Group_FP = project_config["GROUPS_FP"]
 with open(project_config["SPEAKER_FILE"]) as speaker_file:
     speaker_list = json.load(speaker_file)

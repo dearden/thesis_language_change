@@ -24,7 +24,6 @@ nlp = spacy.load('en_core_web_sm')
 with open("../project-config.json") as config_file:
     project_config = json.load(config_file)
 
-DB_FP = project_config["DB_FP"]
 MP_Group_FP = project_config["GROUPS_FP"]
 with open(project_config["SPEAKER_FILE"]) as speaker_file:
     speaker_list = json.load(speaker_file)
@@ -66,8 +65,8 @@ def keywords_filter(contributions, kw_mention_regex=None, kw_section_regex=None)
 
 # Splits corpus into subset and reference based on the type given
 def split_corpus(all_contributions, filter_type,
-                    mention_wordlist_fp=os.path.join(main_dir, "eu_mention_search_terms.json"),
-                    section_wordlist_fp=os.path.join(main_dir, "eu_section_search_terms.json")):
+                    mention_wordlist_fp=os.path.join(main_dir, "resources", "eu_mention_search_terms.json"),
+                    section_wordlist_fp=os.path.join(main_dir, "resources", "eu_section_search_terms.json")):
     # Load in all the EU search terms for searching text for mentions.
     with open(mention_wordlist_fp) as eu_term_file:
         eu_term_list = json.load(eu_term_file)
