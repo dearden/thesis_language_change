@@ -345,3 +345,47 @@ def make_tok_chunks(tokens, chunk_size):
     chunks = merge_lists(chunks)
     chunks = pd.DataFrame(chunks, columns=["idx", "chunk"])
     return chunks
+
+
+def get_static_kws(all_contributions, all_counts, tokenised, group_type="party", filter_type="eu"):
+    # Get the reference corpus
+    subset, ref_corpus = split_corpus(all_contributions, filter_type)
+
+    print("FINDING KEYWORDS")
+
+    # Get the function which gives us our groups (if this wasn't already given)
+    if callable(group_type):
+        group_function = group_type
+    else:
+        group_function = get_group_function(group_type)
+
+    kw_dic = dict()
+    check_frequency_threshold = lambda x: True if all_counts[x] > 10 else False
+
+
+    # First pass through to find the keywords.
+    for group, contributions in group_function(all_contributions):
+        # Create the current group name.
+        curr_group_name = group
+
+        contribs = subset[subset.index.isin(contributions.index)]
+        comparis = ref_corpus[ref_corpus.index.isin(contributions.index)]
+
+        # Sorts the current contributions by date.
+        contribs = contribs.sort_values("date", ascending=True)
+        comparis = comparis.sort_values("date", ascending=True)
+
+        # Get the tokens.
+        contrib_toks = tokenised.loc[contribs.index]
+        compari_toks = tokenised.loc[comparis.index]
+
+        print("=======================================")
+        print("STARTED PROCESSING GROUP {}".format(curr_group_name))
+        print("=======================================")
+
+        keywords = get_keywords_from_tokens(contrib_toks, compari_toks, lr_threshold=1)
+        keywords = keywords[keywords.index.to_series().apply(check_frequency_threshold)]
+            
+        kw_dic[curr_group_name] = keywords
+
+    return kw_dic
